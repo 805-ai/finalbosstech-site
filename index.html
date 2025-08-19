@@ -1,174 +1,467 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final Boss Technology – Synthetic Media Governance</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="Patent‑pending consent, compliance, and verification for AI‑generated content — architected to leverage oracle networks for real‑time, verifiable policy enforcement.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Boss Technology - Governance as a Service (GaaS)</title>
+    
+    <!-- DEPLOYMENT_FINGERPRINT: 2025-08-19-FINAL -->
+
+    <!-- SEO and Social Sharing Meta Tags -->
+    <meta name="description" content="Final Boss Technology provides inline, cryptographically verifiable governance for AI, data, and synthetic media. Multiple patents pending. Stealth, white-label, and plug-and-play integrations.">
+    <meta property="og:title" content="Final Boss Technology - Governance as a Service (GaaS)">
+    <meta property="og:description" content="Experience our AI Governance Sandbox and see how we enforce policy, protect data, and ensure compliance in real-time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://finalbosstech.com">
+    <meta property="og:image" content="https://placehold.co/1200x630/0A0A1A/4f46e5?text=FinalBossTech">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.5), 0 0 30px rgba(236, 72, 153, 0.3);
+        }
+        .sandbox-tab {
+            cursor: pointer; padding: 0.75rem 1.5rem; border-radius: 0.5rem; transition: all 0.2s ease-in-out; border: 1px solid transparent;
+        }
+        .sandbox-tab.active { background-color: #4f46e5; color: white; font-weight: 600; }
+        .sandbox-tab:not(.active) { background-color: #374151; color: #d1d5db; }
+        .sandbox-tab:not(.active):hover { background-color: #4b5563; }
+        .loader {
+            border: 4px solid #4b5563; border-top: 4px solid #4f46e5; border-radius: 50%; width: 32px; height: 32px; animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
+        .subtle-glow:hover { box-shadow: 0 0 20px rgba(79, 70, 229, 0.4); border-color: rgba(79, 70, 229, 0.6); }
+        .neon-text-shadow { text-shadow: 0 0 10px rgba(79, 70, 229, 0.4); }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
-  <header class="sticky top-0 bg-slate-900/70 backdrop-blur border-b border-slate-800">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-xl font-semibold">Final Boss Technology</h1>
-      <div class="hidden md:flex space-x-4 text-sm">
-        <a href="#why" class="hover:text-emerald-300">Why</a>
-        <a href="#tech" class="hover:text-emerald-300">Tech</a>
-        <a href="#use-cases" class="hover:text-emerald-300">Use Cases</a>
-        <a href="#ip" class="hover:text-emerald-300">IP & Licensing</a>
-            <a href="#contact" class="hover:text-emerald-300">Contact</a>
-            <a href="/verify" class="hover:text-emerald-300">Verify</a>
-      </div>
-    </nav>
-  </header>
-  <main class="max-w-6xl mx-auto px-4">
-    <section class="pt-20 pb-24 text-center">
-      <h2 class="text-4xl md:text-6xl font-bold mb-4">The Governance Layer for <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">Synthetic Media</span></h2>
-      <p class="text-lg text-slate-300 max-w-2xl mx-auto">Patent‑pending consent, compliance, and verification for AI‑generated content — architected to leverage oracle networks for real‑time, verifiable policy enforcement.</p>
-      <div class="mt-6 flex justify-center space-x-4">
-        <a href="#contact" class="px-6 py-3 rounded-2xl bg-emerald-500 text-slate-900 hover:bg-emerald-400">Talk Licensing</a>
-        <a href="#ip" class="px-6 py-3 rounded-2xl border border-slate-700 hover:border-slate-600">View IP Snapshot</a>
-      </div>
-  
-          <div class="mt-6">
-      <video class="w-full rounded-2xl"
-             src="assets/hero.mp4"
-             autoplay muted loop playsinline
-             preload="metadata"
-             poster="assets/poster.jpg">
-        Sorry, your browser doesn’t support embedded video.
-      </video>
-    </div>
-<div class="mt-4 text-sm text-slate-400">US Patent Application: 19/240,581 (pending)</div>
-    </section>
+<body class="bg-gray-900 text-gray-300">
 
-    <section id="why" class="py-16">
-      <h2 class="text-3xl font-semibold mb-4">Why enterprises need this now</h2>
-      <p class="text-slate-300 mb-8 max-w-3xl">Synthetic media is crossing into regulated workflows. Firms need a programmable consent layer that prevents unauthorized generation and use before it ships — not an after‑the‑fact takedown. Final Boss provides that pre‑flight check and continuous enforcement.</p>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Compliance by design</h3>
-          <p class="text-sm text-slate-300">Encode policy once; enforce at creation, distribution, and modification.</p>
+    <!-- Header -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-tighter">
+                Final<span class="gradient-text">Boss</span>Tech
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-indigo-400 transition-colors">About</a>
+                <a href="#sandbox" class="hover:text-indigo-400 transition-colors">AI Sandbox</a>
+                <a href="#technology" class="hover:text-indigo-400 transition-colors">Technology</a>
+                <a href="#licensing" class="hover:text-indigo-400 transition-colors">Licensing</a>
+                <a href="terms.html" class="hover:text-indigo-400 transition-colors">Terms</a>
+                <a href="privacy.html" class="hover:text-indigo-400 transition-colors">Privacy</a>
+                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Open menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Provable audit trail</h3>
-          <p class="text-sm text-slate-300">Timestamped attestations for who consented to what, when, and under which terms.</p>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block hover:text-indigo-400 transition-colors py-2">About</a>
+            <a href="#sandbox" class="block hover:text-indigo-400 transition-colors py-2">AI Sandbox</a>
+            <a href="#technology" class="block hover:text-indigo-400 transition-colors py-2">Technology</a>
+            <a href="#licensing" class="block hover:text-indigo-400 transition-colors py-2">Licensing</a>
+            <a href="terms.html" class="block hover:text-indigo-400 transition-colors py-2">Terms</a>
+            <a href="privacy.html" class="block hover:text-indigo-400 transition-colors py-2">Privacy</a>
+            <a href="#contact" class="block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 mt-2 text-center">Contact</a>
         </div>
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Interoperable</h3>
-          <p class="text-sm text-slate-300">Chain‑agnostic architecture designed to work with major oracle networks and enterprise stacks.</p>
-        </div>
-      </div>
-    </section>
+    </header>
 
-    <section id="tech" class="py-16">
-      <h2 class="text-3xl font-semibold mb-4">Architecture highlights</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Oracle‑gated pipelines</h3>
-          <p class="text-sm text-slate-300">Content generation gates call out to oracles for consent status, identity proofs, and policy feeds; workflows halt or route when checks fail.</p>
-        </div>
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Cryptographic attestations</h3>
-          <p class="text-sm text-slate-300">Sign and verify consent tokens; support rotation to post‑quantum schemes as standards mature.</p>
-        </div>
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Policy as code</h3>
-          <p class="text-sm text-slate-300">Express rights and restrictions as declarative, machine‑verifiable policies; map to EU AI Act and sector regulations.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="use-cases" class="py-16">
-      <h2 class="text-3xl font-semibold mb-4">High‑value use cases</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Enterprise GenAI pipelines</h3>
-          <ul class="list-disc pl-5 text-sm text-slate-300 space-y-2">
-            <li>Pre‑flight consent checks for marketing & comms</li>
-            <li>Revocation‑aware asset catalogs</li>
-            <li>Signed provenance for model & output</li>
-          </ul>
-        </div>
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Media & IP licensing</h3>
-          <ul class="list-disc pl-5 text-sm text-slate-300 space-y-2">
-            <li>Creator/subject approvals baked into generation</li>
-            <li>Smart‑contracted usage terms</li>
-            <li>Automated royalty routing signals</li>
-          </ul>
-        </div>
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Institutional & public sector</h3>
-          <ul class="list-disc pl-5 text-sm text-slate-300 space-y-2">
-            <li>Policy‑bound avatars/voice synthesis</li>
-            <li>KYC/AML‑aware content gating</li>
-            <li>Tamper‑evident audit logs</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="ip" class="py-16">
-      <h2 class="text-3xl font-semibold mb-4">IP & Licensing</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Patent Snapshot</h3>
-          <p class="text-sm text-slate-300">
-            <strong>Application:</strong> US 19/240,581 (pending)<br/>
-            <strong>Scope:</strong> Dynamic consent protocol for generation, distribution, and modification of synthetic media, with oracle‑verified attestations.<br/>
-            <strong>Edge:</strong> Pre‑emptive governance (preventing non‑compliant outputs), chain‑agnostic oracle design, quantum‑aware roadmap.
-          </p>
-        </div>
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">License What, Not How</h3>
-          <p class="text-sm text-slate-300">
-            We license the IP and reference designs to model providers, platforms, and enterprises. Target partners include oracle networks and enterprise AI platforms. Custom field‑of‑use and territory options available.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="py-16">
-      <h2 class="text-3xl font-semibold mb-4">Start a licensing conversation</h2>
-      <p class="text-slate-300 mb-6 max-w-2xl">We’re seeking strategic partners in the oracle, blockchain, and enterprise AI ecosystems. Tell us about your platform and compliance needs — we’ll follow up with tailored materials.</p>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thanks — we will reach out.');">
-            <input type="text" class="w-full rounded-xl px-3 py-2 bg-slate-800 border border-slate-700" placeholder="Your name">
-            <input type="email" class="w-full rounded-xl px-3 py-2 bg-slate-800 border border-slate-700" placeholder="Work email">
-            <input type="text" class="w-full rounded-xl px-3 py-2 bg-slate-800 border border-slate-700" placeholder="Company / Organization">
-            <textarea class="w-full rounded-xl px-3 py-2 bg-slate-800 border border-slate-700 min-h-[120px]" placeholder="Briefly describe your use case"></textarea>
-            <div class="flex gap-3">
-              <button class="rounded-2xl px-5 py-3 bg-emerald-500 text-slate-900 font-medium hover:bg-emerald-400">Send</button>
-              <a href="mailto:partner@finalbosstechnology.com?subject=Licensing%20Inquiry%20—%20Final%20Boss%20Technology" class="rounded-2xl px-5 py-3 border border-slate-700 hover:border-slate-600">Email us</a>
+    <main>
+        <!-- Hero Section -->
+        <section class="py-24 md:py-32 text-center bg-gray-900 relative overflow-hidden">
+            <div id="particles-js"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <h2 class="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter">
+                    The Final Stop for <br class="hidden md:block" /><span class="gradient-text">Governance-as-a-Service</span>
+                </h2>
+                <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-400">
+                    Our patented innovations in verifiable receipts, inline policy enforcement, and multi-system orchestration stop unauthorized AI use before it happens.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#sandbox" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 glow">
+                        Try the AI Sandbox
+                    </a>
+                    <a href="#licensing" class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                        License With Us
+                    </a>
+                </div>
             </div>
-          </form>
-        </div>
-        <div class="p-5 border border-slate-800 rounded-xl bg-slate-900/60">
-          <h3 class="font-medium mb-2">Chainlink‑Facing Positioning</h3>
-          <ul class="list-disc pl-5 text-sm text-slate-300 space-y-2">
-            <li>Position oracles as the enforcement substrate for dynamic consent & policy feeds.</li>
-            <li>Offer Final Boss as a compliance module to strengthen enterprise AI and financial‑grade deployments.</li>
-            <li>Ask: intro to BUILD/partnerships lead for a co‑go‑to‑market pilot in synthetic media governance.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+        </section>
 
-  <footer class="border-t border-slate-800 py-8">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between text-sm text-slate-400 gap-4">
-      <p>© <span id="yr"></span> Final Boss Technology. All rights reserved.</p>
-      <div class="flex gap-4">
-        <a href="#contact" class="hover:text-emerald-300">Contact</a>
-        <a href="#" class="hover:text-emerald-300">Privacy</a>
-        <a href="#" class="hover:text-emerald-300">Terms</a>
-      </div>
-    </div>
-  </footer>
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+        <!-- AI Governance Sandbox Section -->
+        <section id="sandbox" class="py-20 md:py-28 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white neon-text-shadow">AI Governance Sandbox</h3>
+                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">These tools are powered by our core innovations in policy enforcement and verifiable receipts. Experience how our technology works in real-time.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-gray-800 rounded-2xl border border-gray-700 p-4 sm:p-6 transition-all duration-300 subtle-glow">
+                    <!-- Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <div id="tab-summarize" class="sandbox-tab active" onclick="switchTab('summarize')">Policy Summarizer</div>
+                        <div id="tab-redact" class="sandbox-tab" onclick="switchTab('redact')">PII Redactor</div>
+                        <div id="tab-analyze" class="sandbox-tab" onclick="switchTab('analyze')">Compliance Analyzer</div>
+                        <div id="tab-verify" class="sandbox-tab" onclick="switchTab('verify')">Receipt Verifier</div>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div id="content-summarize" class="sandbox-content">
+                        <p class="text-gray-400 mb-4">Paste complex text (e.g., legal terms) to get a simple summary.</p>
+                        <textarea id="input-summarize" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Paste text here to summarize..."></textarea>
+                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Summarize Text</button>
+                    </div>
+                    <div id="content-redact" class="sandbox-content hidden">
+                        <p class="text-gray-400 mb-4">The AI will redact PII and generate a cryptographic receipt for the action.</p>
+                        <textarea id="input-redact" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g., 'Contact Jane Doe at jane.doe@email.com...'"></textarea>
+                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Redact PII & Generate Receipt</button>
+                    </div>
+                    <div id="content-analyze" class="sandbox-content hidden">
+                        <p class="text-gray-400 mb-4">Check if text meets a policy: "Must have a professional tone and not make financial promises."</p>
+                        <textarea id="input-analyze" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g., 'Our product will guarantee you double your profits!'"></textarea>
+                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Analyze Compliance</button>
+                    </div>
+                    <div id="content-verify" class="sandbox-content hidden">
+                        <p class="text-gray-400 mb-4">Paste a cryptographic receipt generated by the PII Redactor to verify its authenticity.</p>
+                        <textarea id="input-verify" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Paste a receipt here..."></textarea>
+                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Verify Receipt</button>
+                    </div>
+
+                    <!-- Output Area -->
+                    <div id="sandbox-output-container" class="mt-6 hidden">
+                        <h4 class="text-xl font-semibold text-white mb-3">Result</h4>
+                        <div id="sandbox-loader" class="loader my-4" style="display: none;"></div>
+                        <div id="sandbox-output" class="bg-gray-900 rounded-lg p-4 border border-gray-600 whitespace-pre-wrap text-gray-300"></div>
+                        <div id="receipt-output" class="mt-4 hidden">
+                            <h5 class="text-lg font-semibold text-indigo-300 mb-2">Cryptographic Receipt</h5>
+                            <div id="receipt-content" class="bg-gray-900 rounded-lg p-4 border border-gray-600 text-sm text-gray-400 font-mono break-all"></div>
+                        </div>
+                        <!-- Call to Action Button -->
+                        <div id="cta-button-container" class="mt-6 text-center hidden">
+                            <a href="mailto:Abraham@finalbosstech.com?subject=Demo Request from AI Sandbox" class="bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 glow">
+                                Request a Full Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technology Section (Redesigned) -->
+        <section id="technology" class="py-20 md:py-28 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white neon-text-shadow">Our Patented GaaS Platform</h3>
+                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Our technology is backed by multiple U.S. and international patent applications pending.</p>
+                </div>
+
+                <div class="space-y-20">
+                    <!-- Innovation 1: Consent Receipts -->
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="text-center md:text-left">
+                            <h4 class="text-2xl font-bold text-white mb-4">Consent Receipts for AI & Media</h4>
+                            <p class="text-gray-400 mb-4">Our system generates **Cryptographic Consent DNA Tokens (CDTs)**—tamper-proof receipts for every AI and media output. This provides a regulator-ready, verifiable audit trail that proves every action was authorized against a specific policy, ensuring compliance and building user trust.</p>
+                            <span class="text-indigo-400 font-semibold">Benefits: Compliance, Trust, Instant Revocability</span>
+                        </div>
+                        <div class="flex justify-center mt-8 md:mt-0">
+                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4" class="text-green-400"></path></svg>
+                        </div>
+                    </div>
+
+                    <!-- Innovation 2: Inline Policy Enforcement -->
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="flex justify-center mb-8 md:mb-0 md:order-2">
+                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15V9m-4.364 3.364L12 15l4.364-2.636M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 9l-6 6M9 9l6 6" class="text-red-500"></path></svg>
+                        </div>
+                        <div class="text-center md:text-left md:order-1">
+                            <h4 class="text-2xl font-bold text-white mb-4">Inline AI Policy Enforcement</h4>
+                            <p class="text-gray-400 mb-4">Unlike systems that audit after the fact, our governance layer is enforced **at inference time**. Unauthorized AI responses are blocked before they're ever generated, while compliant outputs are allowed and logged with a verifiable receipt. This prevents liability and ensures ethical AI use from the start.</p>
+                            <span class="text-indigo-400 font-semibold">Benefits: Liability Prevention, Real-Time Safety</span>
+                        </div>
+                    </div>
+
+                    <!-- Innovation 3: Multi-System Orchestration -->
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="text-center md:text-left">
+                            <h4 class="text-2xl font-bold text-white mb-4">Multi-System Governance Orchestration</h4>
+                            <p class="text-gray-400 mb-4">Our framework harmonizes compliance across your entire tech stack—from databases like **BigQuery and Snowflake** to ML pipelines and APIs. This creates a single, consistent governance fabric across hybrid and multi-cloud environments, ensuring universal compliance and future-proofing your architecture.</p>
+                            <span class="text-indigo-400 font-semibold">Benefits: Consistent Compliance, Future-Proof</span>
+                        </div>
+                        <div class="flex justify-center mt-8 md:mt-0">
+                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-28 bg-gray-900/50">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 neon-text-shadow">Who We Are</h3>
+                <div class="w-20 h-1 bg-indigo-500 mx-auto mb-8"></div>
+                <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-12">
+                    Final Boss Technology delivers next-generation governance infrastructure for AI, data, and synthetic media. We specialize in deep-tech solutions that ensure AI outputs are compliant, secure, and ethically governed. We operate in <strong class="text-indigo-400">stealth or white-label mode</strong> — our clients choose whether to publicize our work or keep us invisible.
+                </p>
+
+                <!-- Founder Section -->
+                <div class="max-w-4xl mx-auto bg-gray-800/50 rounded-2xl p-8 md:flex md:items-center md:gap-8 border border-gray-700">
+                    <img src="https://placehold.co/150x150/4f46e5/ffffff?text=AM" alt="Abraham Manzano" class="w-36 h-36 rounded-full mx-auto md:mx-0 flex-shrink-0 border-4 border-gray-700">
+                    <div class="text-center md:text-left mt-6 md:mt-0">
+                        <h4 class="text-2xl font-bold text-white">Abraham Manzano</h4>
+                        <p class="text-indigo-400 font-semibold">Founder & Chief Architect</p>
+                        <p class="text-gray-400 mt-4">
+                            Abraham is a deep-tech founder specializing in governance, consent, and trust infrastructure for AI and synthetic media. His work, backed by multiple pending patents, focuses on providing inline, cryptographically verifiable controls to ensure AI outputs are secure and ethically governed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrations & Compliance Section -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 neon-text-shadow">Integrations & Compliance</h3>
+                <p class="mt-4 text-lg text-gray-400 mb-12">Built to work with your existing stack and meet global regulatory standards.</p>
+                <div class="max-w-4xl mx-auto">
+                    <h4 class="text-xl font-semibold text-white mb-6">Platform Integrations</h4>
+                    <div class="flex justify-center items-center gap-8 md:gap-12 flex-wrap">
+                        <!-- Databricks SVG Logo -->
+                        <svg class="h-10 text-gray-400" viewBox="0 0 128 128" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 64L19.2 51.2L64 76.8L108.8 51.2L128 64L64 102.4L0 64ZM64 0L0 38.4L19.2 51.2L64 25.6L108.8 51.2L128 38.4L64 0ZM19.2 76.8L0 89.6L64 128L128 89.6L108.8 76.8L64 102.4L19.2 76.8Z"/></svg>
+                        <!-- Snowflake SVG Logo -->
+                        <svg class="h-10 text-gray-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21.53 13.2L19.2 12l2.33-1.2-1.2-2.07-2.33 1.2L16.8 7.6l-2.07-1.2-1.2 2.33L12 9.93l-1.53-2.6-2.07 1.2 1.2 2.33L7.2 10.73l-2.33-1.2-1.2 2.07 2.33 1.2L3.6 13.2l1.2 2.07 2.33-1.2 1.2 2.33 2.07 1.2 1.53-2.6 1.53 2.6 2.07-1.2-1.2-2.33 2.33 1.2 1.2-2.07zM12 15.5l-2-3.46 2-3.47 2 3.47-2 3.46z"/></svg>
+                        <!-- Google Cloud SVG Logo -->
+                        <svg class="h-10 text-gray-400" viewBox="0 0 128 128" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M97.9,56.6C97.9,53,97.6,49.5,97,46.1H64v18h19c-0.8,5.8-3.4,10.9-7.8,14.2v11.7h15.2C104.4,81.8,107.9,70,107.9,56.6z"/><path d="M64,108c12.4,0,22.8-4.1,30.4-11.1L79.2,85.2c-4.1,2.8-9.4,4.4-15.2,4.4c-11.7,0-21.6-7.9-25.1-18.5H23.3v11.7 C30.9,96.8,46.4,108,64,108z"/><path d="M38.9,71.1c-0.8-2.3-1.3-4.8-1.3-7.2s0.5-4.9,1.3-7.2V45H23.3c-2.7,5.4-4.3,11.4-4.3,17.9c0,6.5,1.6,12.5,4.3,17.9 L38.9,71.1z"/><path d="M64,36c6.7,0,12.8,2.3,17.6,6.9l15.2-15.2C88.8,16.1,77.2,12,64,12C46.4,12,30.9,23.2,23.3,35.3l15.6,11.7 C42.4,43.9,52.3,36,64,36z"/></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mt-12 mb-6">Compliance Frameworks</h4>
+                    <div class="flex justify-center items-center gap-8 md:gap-12 flex-wrap text-gray-400 font-semibold">
+                        <span>GDPR</span>
+                        <span>CCPA</span>
+                        <span>EU AI Act</span>
+                        <span>HIPAA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Licensing Section -->
+        <section id="licensing" class="py-20 md:py-28">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 neon-text-shadow">Licensing Opportunities</h3>
+                <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-12">Flexible licensing for enterprises, platforms, and integrators.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-white">White-Label</h4>
+                        <p class="mt-2 text-gray-400">Deploy our technology under your own brand.</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-white">Enterprise</h4>
+                        <p class="mt-2 text-gray-400">Integrate directly into your AI and data stack.</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-white">Stealth Deployment</h4>
+                        <p class="mt-2 text-gray-400">Operate quietly under NDA with no publicity.</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-white">GaaS Subscription</h4>
+                        <p class="mt-2 text-gray-400">Inline enforcement and receipts as a service.</p>
+                    </div>
+                </div>
+                 <div class="mt-12">
+                     <a href="mailto:Abraham@finalbosstech.com?subject=Licensing Inquiry" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 rounded-lg transition-transform transform hover:scale-105 glow text-lg">
+                        Contact Licensing
+                    </a>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-12">
+            <div class="md:flex md:justify-between items-center text-center md:text-left">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold text-white">Final<span class="gradient-text">Boss</span>Tech</h2>
+                    <p class="mt-2 text-gray-500">Next-Generation Governance Infrastructure.</p>
+                </div>
+                <div class="text-sm">
+                     <p class="text-gray-400 mb-2">General & Licensing Inquiries:</p>
+                     <a href="mailto:Abraham@finalbosstech.com" class="hover:text-indigo-400">Abraham@finalbosstech.com</a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8">
+                <div class="text-center text-sm text-gray-500 mb-4">
+                    <a href="terms.html" class="hover:text-indigo-400">Terms of Use</a>
+                    <span class="mx-2">|</span>
+                    <a href="privacy.html" class="hover:text-indigo-400">Privacy Policy</a>
+                </div>
+                <p class="text-sm text-gray-500 text-center">
+                    <strong>Disclaimer:</strong> Final Boss Technology provides this overview for illustrative purposes only. Nothing herein limits or defines the scope of our pending patent applications. All features described are examples and subject to change.
+                </p>
+                <p class="text-sm text-gray-500 text-center mt-4">
+                    &copy; <span id="current-year"></span> Final Boss Technology. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        // --- Particles.js Configuration ---
+        particlesJS('particles-js', { particles: { number: { value: 80, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "circle" }, opacity: { value: 0.5, random: false }, size: { value: 3, random: true }, line_linked: { enable: true, distance: 150, color: "#4f46e5", opacity: 0.4, width: 1 }, move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false } }, interactivity: { detect_on: "canvas", events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true }, modes: { grab: { distance: 140, line_opacity: 1 }, push: { particles_nb: 4 } } }, retina_detect: true });
+
+        // --- Sandbox Logic ---
+        const tabs = ['summarize', 'redact', 'analyze', 'verify'];
+        let currentTab = 'summarize';
+        let lastGeneratedReceipt = null;
+
+        async function generateDemoHash(str) {
+            const buffer = new TextEncoder().encode(str);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        function switchTab(tabName) {
+            currentTab = tabName;
+            tabs.forEach(tab => {
+                document.getElementById(`tab-${tab}`).classList.toggle('active', tab === tabName);
+                document.getElementById(`content-${tab}`).classList.toggle('hidden', tab !== tabName);
+            });
+            document.getElementById('sandbox-output-container').classList.add('hidden');
+            document.getElementById('receipt-output').classList.add('hidden');
+            document.getElementById('cta-button-container').classList.add('hidden');
+        }
+
+        async function runAction() {
+            const inputElement = document.getElementById(`input-${currentTab}`);
+            const inputText = inputElement.value.trim();
+            if (!inputText) {
+                inputElement.placeholder = "Please enter some text first.";
+                inputElement.classList.add('placeholder-red-400');
+                setTimeout(() => {
+                    inputElement.classList.remove('placeholder-red-400');
+                    inputElement.placeholder = "Paste text here...";
+                }, 3000);
+                return;
+            }
+
+            const outputContainer = document.getElementById('sandbox-output-container');
+            const outputElement = document.getElementById('sandbox-output');
+            const loader = document.getElementById('sandbox-loader');
+            const receiptContainer = document.getElementById('receipt-output');
+            const receiptContent = document.getElementById('receipt-content');
+            const ctaContainer = document.getElementById('cta-button-container');
+
+            outputContainer.classList.remove('hidden');
+            receiptContainer.classList.add('hidden');
+            ctaContainer.classList.add('hidden');
+            loader.style.display = 'block';
+            outputElement.textContent = '';
+            
+            let prompt = '';
+            if (currentTab === 'verify') {
+                loader.style.display = 'none';
+                if (inputText === lastGeneratedReceipt && lastGeneratedReceipt !== null) {
+                    outputElement.innerHTML = `<span class="text-green-400 font-bold">✅ Verified & Compliant</span><br><br>This receipt is authentic and matches the last redaction event.`;
+                } else {
+                    outputElement.innerHTML = `<span class="text-red-400 font-bold">❌ Verification Failed</span><br><br>This receipt is either invalid or does not match the last redaction event.`;
+                }
+                ctaContainer.classList.remove('hidden');
+                return;
+            }
+
+            switch (currentTab) {
+                case 'summarize':
+                    prompt = `Summarize the following text into simple, easy-to-understand bullet points. Keep it concise.\n\nText:\n${inputText}`;
+                    break;
+                case 'redact':
+                    prompt = `Analyze the following text and redact all Personally Identifiable Information (PII). Replace names, email addresses, phone numbers, and physical addresses with placeholders like [REDACTED_NAME], [REDACTED_EMAIL], etc. Return only the redacted text.\n\nText:\n${inputText}`;
+                    break;
+                case 'analyze':
+                    prompt = `Analyze the following text against a compliance policy. The policy is: "The text must maintain a professional tone and must not make specific financial promises or guarantees."\n\nProvide a result in two parts:\n1. Compliance Status: (e.g., "Compliant" or "Non-Compliant")\n2. Justification: (A brief explanation of why it meets or fails the policy).\n\nText:\n${inputText}`;
+                    break;
+            }
+
+            try {
+                const result = await fetchWithBackoff(prompt);
+                outputElement.textContent = result;
+                ctaContainer.classList.remove('hidden');
+
+                if (currentTab === 'redact') {
+                    lastGeneratedReceipt = await generateDemoHash(inputText + result);
+                    receiptContent.textContent = lastGeneratedReceipt;
+                    receiptContainer.classList.remove('hidden');
+                }
+
+            } catch (error) {
+                console.error('Error performing AI action:', error);
+                outputElement.textContent = 'An error occurred. Please try again later.';
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+
+        async function fetchWithBackoff(prompt) {
+            let retries = 3;
+            let delay = 1000;
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch('/api/gemini', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ prompt })
+                    });
+
+                    if (!response.ok) throw new Error(`API error: ${response.status}`);
+                    
+                    const result = await response.json();
+
+                    if (result.text) {
+                        return result.text;
+                    } else {
+                        throw new Error('Invalid API response structure');
+                    }
+                } catch (error) {
+                    console.warn(`Attempt ${i + 1} failed. Retrying in ${delay / 1000}s...`);
+                    if (i < retries - 1) {
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        delay *= 2;
+                    } else {
+                        throw error;
+                    }
+                }
+            }
+        }
+        
+        // --- Mobile Menu & Footer Year Logic ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        Array.from(mobileMenu.getElementsByTagName('a')).forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.getAttribute('href').startsWith('#')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
