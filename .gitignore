@@ -1,0 +1,10 @@
+# Ignore environment and config files
+.env
+*.env
+# Node modules
+node_modules/
+# System files
+.DS_Store
+.vscode/
+.idea/
+*.log
