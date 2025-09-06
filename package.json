@@ -1,0 +1,13 @@
+{
+  "name": "finalbosstech-site",
+  "version": "1.0.0",
+  "description": "This repository demonstrates a dynamic consent mechanism for synthetic media policy enforcement. The demo uses a simple front-end to simulate viral-threshold updates and verify requests against evolving policies.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo 'No tests'"
+  },
+  "dependencies": {
+    "@google/genai": "^1.17.0"
+  }
+}
