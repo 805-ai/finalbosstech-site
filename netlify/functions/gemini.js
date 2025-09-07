@@ -1,17 +1,13 @@
 const { GoogleGenAI } = require('@google/genai');
-
 const jsonHeaders = { 'Content-Type': 'application/json' };
 
-exports.handler = async (event) => {
-  if (!process.env.GEMINI_API_KEY) {
-    console.error('Missing GEMINI_API_KEY');
-    return {
-      statusCode: 500,
-      headers: jsonHeaders,
-      body: JSON.stringify({ error: 'GEMINI_API_KEY not configured' }),
-    };
-  }
+// Fail fast at module load if missing config
+if (!process.env.GEMINI_API_KEY) {
+  throw new Error('GEMINI_API_KEY not configured');
+}
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
+exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -25,7 +21,6 @@ exports.handler = async (event) => {
     const body = JSON.parse(event.body || '{}');
     prompt = body.prompt;
   } catch (err) {
-    console.error('Malformed JSON', err);
     return {
       statusCode: 400,
       headers: jsonHeaders,
@@ -33,29 +28,27 @@ exports.handler = async (event) => {
     };
   }
 
-  if (typeof prompt !== 'string' || prompt.trim() === '') {
+  if (typeof prompt !== 'string' || !prompt.trim()) {
     return {
       statusCode: 400,
       headers: jsonHeaders,
-      body: JSON.stringify({ error: 'Missing prompt' }),
+      body: JSON.stringify({ error: 'Missing or invalid prompt' }),
     };
   }
-
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: prompt,
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
     });
-    const text = response.text;
+    // Adjust if the SDK response shape changes
+    const text = response.text || response.data?.text || '';
     return {
       statusCode: 200,
       headers: jsonHeaders,
       body: JSON.stringify({ text }),
     };
   } catch (err) {
-    console.error('Gemini request failed', err);
     return {
       statusCode: 502,
       headers: jsonHeaders,
