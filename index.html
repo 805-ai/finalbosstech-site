@@ -20,8 +20,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="/assets/config.js"></script>
     <style>
         body {
+       
             font-family: 'Inter', sans-serif;
         }
         .gradient-text {
@@ -422,7 +424,8 @@
             let delay = 1000;
             for (let i = 0; i < retries; i++) {
                 try {
-                    const response = await fetch('/api/gemini', {
+                    const response = await fetch(window.GEMINI_API_BASE,
+                   ', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ prompt })
