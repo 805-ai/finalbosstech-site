@@ -1,1 +1,2 @@
-window.GEMINI_API_BASE = "https://cute-khapse-e12a8d.netlify.app/.netlify/functions/gemini";
+window.GEMINI_API_BASE = "https://<your-netlify-site>.netlify.app/.netlify/functions/gemini";
+

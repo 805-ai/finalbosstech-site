@@ -1,13 +1,32 @@
 const { GoogleGenAI } = require('@google/genai');
-const jsonHeaders = { 'Content-Type': 'application/json' };
+
+const jsonHeaders = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  'Vary': 'Origin',
+};
 
 // Fail fast at module load if missing config
 if (!process.env.GEMINI_API_KEY) {
   throw new Error('GEMINI_API_KEY not configured');
 }
+
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 exports.handler = async (event) => {
+  // CORS preflight
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 204,
+      headers: {
+        ...jsonHeaders,
+        'Access-Control-Allow-Methods': 'POST,OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
+      body: '',
+    };
+  }
+
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -20,7 +39,7 @@ exports.handler = async (event) => {
   try {
     const body = JSON.parse(event.body || '{}');
     prompt = body.prompt;
-  } catch (err) {
+  } catch {
     return {
       statusCode: 400,
       headers: jsonHeaders,
@@ -41,7 +60,6 @@ exports.handler = async (event) => {
       model: 'gemini-2.5-flash',
       contents: [{ role: 'user', parts: [{ text: prompt }] }],
     });
-    // Adjust if the SDK response shape changes
     const text = response.text || response.data?.text || '';
     return {
       statusCode: 200,

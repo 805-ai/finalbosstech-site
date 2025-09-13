@@ -425,22 +425,22 @@
             for (let i = 0; i < retries; i++) {
                 try {
                     const response = await fetch(window.GEMINI_API_BASE, {
-{
-
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ prompt })
                     });
 
-                    if (!response.ok) throw new Error(`API error: ${response.status}`);
-                    
                     const result = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(result.error || `API error: ${response.status}`);
+                    }
 
                     if (result.text) {
                         return result.text;
-                    } else {
-                        throw new Error('Invalid API response structure');
                     }
+
+                    throw new Error(result.error || 'Invalid API response structure');
                 } catch (error) {
                     console.warn(`Attempt ${i + 1} failed. Retrying in ${delay / 1000}s...`);
                     if (i < retries - 1) {
