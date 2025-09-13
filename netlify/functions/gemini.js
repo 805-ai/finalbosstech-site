@@ -1,6 +1,10 @@
 const { GoogleGenAI } = require('@google/genai');
 
-const jsonHeaders = { 'Content-Type': 'application/json' };
+const jsonHeaders = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  'Vary': 'Origin',
+};
 
 // Fail fast at module load if missing config
 if (!process.env.GEMINI_API_KEY) {
@@ -16,10 +20,8 @@ exports.handler = async (event) => {
       statusCode: 204,
       headers: {
         ...jsonHeaders,
-        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST,OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type',
-        'Vary': 'Origin',
       },
       body: '',
     };
@@ -61,21 +63,13 @@ exports.handler = async (event) => {
     const text = response.text || response.data?.text || '';
     return {
       statusCode: 200,
-      headers: {
-        ...jsonHeaders,
-        'Access-Control-Allow-Origin': '*',
-        'Vary': 'Origin',
-      },
+      headers: jsonHeaders,
       body: JSON.stringify({ text }),
     };
   } catch (err) {
     return {
       statusCode: 502,
-      headers: {
-        ...jsonHeaders,
-        'Access-Control-Allow-Origin': '*',
-        'Vary': 'Origin',
-      },
+      headers: jsonHeaders,
       body: JSON.stringify({ error: 'Gemini request failed', details: err.message }),
     };
   }
