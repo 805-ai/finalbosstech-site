@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Boss Technology - Governance as a Service (GaaS)</title>
-    
+
     <!-- DEPLOYMENT_FINGERPRINT: 2025-08-19-FINAL -->
 
     <!-- SEO and Social Sharing Meta Tags -->
-    <meta name="description" content="Final Boss Technology provides inline, cryptographically verifiable governance for AI, data, and synthetic media. Multiple patents pending. Stealth, white-label, and plug-and-play integrations.">
+    <meta name="description"
+        content="Final Boss Technology provides inline, cryptographically verifiable governance for AI, data, and synthetic media. Multiple patents pending. Stealth, white-label, and plug-and-play integrations.">
     <meta property="og:title" content="Final Boss Technology - Governance as a Service (GaaS)">
-    <meta property="og:description" content="Experience our AI Governance Sandbox and see how we enforce policy, protect data, and ensure compliance in real-time.">
+    <meta property="og:description"
+        content="Experience our AI Governance Sandbox and see how we enforce policy, protect data, and ensure compliance in real-time.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://finalbosstech.com">
     <meta property="og:image" content="https://placehold.co/1200x630/0A0A1A/4f46e5?text=FinalBossTech">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,33 +27,83 @@
     <script src="/assets/config.js"></script>
     <style>
         body {
-       
+
             font-family: 'Inter', sans-serif;
         }
+
         .gradient-text {
             background: linear-gradient(90deg, #4f46e5, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .glow {
             box-shadow: 0 0 15px rgba(79, 70, 229, 0.5), 0 0 30px rgba(236, 72, 153, 0.3);
         }
+
         .sandbox-tab {
-            cursor: pointer; padding: 0.75rem 1.5rem; border-radius: 0.5rem; transition: all 0.2s ease-in-out; border: 1px solid transparent;
+            cursor: pointer;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid transparent;
         }
-        .sandbox-tab.active { background-color: #4f46e5; color: white; font-weight: 600; }
-        .sandbox-tab:not(.active) { background-color: #374151; color: #d1d5db; }
-        .sandbox-tab:not(.active):hover { background-color: #4b5563; }
+
+        .sandbox-tab.active {
+            background-color: #4f46e5;
+            color: white;
+            font-weight: 600;
+        }
+
+        .sandbox-tab:not(.active) {
+            background-color: #374151;
+            color: #d1d5db;
+        }
+
+        .sandbox-tab:not(.active):hover {
+            background-color: #4b5563;
+        }
+
         .loader {
-            border: 4px solid #4b5563; border-top: 4px solid #4f46e5; border-radius: 50%; width: 32px; height: 32px; animation: spin 1s linear infinite;
+            border: 4px solid #4b5563;
+            border-top: 4px solid #4f46e5;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            animation: spin 1s linear infinite;
             margin: 0 auto;
         }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
-        .subtle-glow:hover { box-shadow: 0 0 20px rgba(79, 70, 229, 0.4); border-color: rgba(79, 70, 229, 0.6); }
-        .neon-text-shadow { text-shadow: 0 0 10px rgba(79, 70, 229, 0.4); }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .subtle-glow:hover {
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+            border-color: rgba(79, 70, 229, 0.6);
+        }
+
+        .neon-text-shadow {
+            text-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
+        }
     </style>
 </head>
+
 <body class="bg-gray-900 text-gray-300">
 
     <!-- Header -->
@@ -65,10 +119,15 @@
                 <a href="#licensing" class="hover:text-indigo-400 transition-colors">Licensing</a>
                 <a href="terms.html" class="hover:text-indigo-400 transition-colors">Terms</a>
                 <a href="privacy.html" class="hover:text-indigo-400 transition-colors">Privacy</a>
-                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105">Contact</a>
+                <a href="#contact"
+                    class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Open menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2">
@@ -78,7 +137,8 @@
             <a href="#licensing" class="block hover:text-indigo-400 transition-colors py-2">Licensing</a>
             <a href="terms.html" class="block hover:text-indigo-400 transition-colors py-2">Terms</a>
             <a href="privacy.html" class="block hover:text-indigo-400 transition-colors py-2">Privacy</a>
-            <a href="#contact" class="block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 mt-2 text-center">Contact</a>
+            <a href="#contact"
+                class="block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 mt-2 text-center">Contact</a>
         </div>
     </header>
 
@@ -88,16 +148,20 @@
             <div id="particles-js"></div>
             <div class="container mx-auto px-6 relative z-10">
                 <h2 class="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter">
-                    The Final Stop for <br class="hidden md:block" /><span class="gradient-text">Governance-as-a-Service</span>
+                    The Final Stop for <br class="hidden md:block" /><span
+                        class="gradient-text">Governance-as-a-Service</span>
                 </h2>
                 <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-400">
-                    Our patented innovations in verifiable receipts, inline policy enforcement, and multi-system orchestration stop unauthorized AI use before it happens.
+                    Our patented innovations in verifiable receipts, inline policy enforcement, and multi-system
+                    orchestration stop unauthorized AI use before it happens.
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="#sandbox" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 glow">
+                    <a href="#sandbox"
+                        class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 glow">
                         Try the AI Sandbox
                     </a>
-                    <a href="#licensing" class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                    <a href="#licensing"
+                        class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
                         License With Us
                     </a>
                 </div>
@@ -109,58 +173,93 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h3 class="text-3xl md:text-4xl font-bold text-white neon-text-shadow">AI Governance Sandbox</h3>
-                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">These tools are powered by our core innovations in policy enforcement and verifiable receipts. Experience how our technology works in real-time.</p>
+                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">These tools are powered by our core
+                        innovations in policy enforcement and verifiable receipts. Experience how our technology works
+                        in real-time.</p>
                 </div>
 
-                <div class="max-w-4xl mx-auto bg-gray-800 rounded-2xl border border-gray-700 p-4 sm:p-6 transition-all duration-300 subtle-glow">
+                <div
+                    class="max-w-4xl mx-auto bg-gray-800 rounded-2xl border border-gray-700 p-4 sm:p-6 transition-all duration-300 subtle-glow">
                     <!-- Tabs -->
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <div id="tab-summarize" class="sandbox-tab active" onclick="switchTab('summarize')">Policy Summarizer</div>
+                        <div id="tab-summarize" class="sandbox-tab active" onclick="switchTab('summarize')">Policy
+                            Summarizer</div>
                         <div id="tab-redact" class="sandbox-tab" onclick="switchTab('redact')">PII Redactor</div>
-                        <div id="tab-analyze" class="sandbox-tab" onclick="switchTab('analyze')">Compliance Analyzer</div>
+                        <div id="tab-analyze" class="sandbox-tab" onclick="switchTab('analyze')">Compliance Analyzer
+                        </div>
                         <div id="tab-verify" class="sandbox-tab" onclick="switchTab('verify')">Receipt Verifier</div>
                         <div id="tab-cdtdna" class="sandbox-tab" onclick="switchTab('cdtdna')">CDT DNA DEMO</div>
                     </div>
 
                     <!-- Tab Content -->
                     <div id="content-summarize" class="sandbox-content">
-                        <p class="text-gray-400 mb-4">Paste complex text (e.g., legal terms) to get a simple summary.</p>
-                        <textarea id="input-summarize" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Paste text here to summarize..."></textarea>
-                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Summarize Text</button>
+                        <p class="text-gray-400 mb-4">Paste complex text (e.g., legal terms) to get a simple summary.
+                        </p>
+                        <textarea id="input-summarize"
+                            class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            placeholder="Paste text here to summarize..."></textarea>
+                        <button onclick="runAction()"
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Summarize
+                            Text</button>
                     </div>
                     <div id="content-redact" class="sandbox-content hidden">
-                        <p class="text-gray-400 mb-4">The AI will redact PII and generate a cryptographic receipt for the action.</p>
-                        <textarea id="input-redact" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g., 'Contact Jane Doe at jane.doe@email.com...'"></textarea>
-                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Redact PII & Generate Receipt</button>
+                        <p class="text-gray-400 mb-4">The AI will redact PII and generate a cryptographic receipt for
+                            the action.</p>
+                        <textarea id="input-redact"
+                            class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            placeholder="e.g., 'Contact Jane Doe at jane.doe@email.com...'"></textarea>
+                        <button onclick="runAction()"
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Redact
+                            PII & Generate Receipt</button>
                     </div>
                     <div id="content-analyze" class="sandbox-content hidden">
-                        <p class="text-gray-400 mb-4">Check if text meets a policy: "Must have a professional tone and not make financial promises."</p>
-                        <textarea id="input-analyze" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g., 'Our product will guarantee you double your profits!'"></textarea>
-                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Analyze Compliance</button>
+                        <p class="text-gray-400 mb-4">Check if text meets a policy: "Must have a professional tone and
+                            not make financial promises."</p>
+                        <textarea id="input-analyze"
+                            class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            placeholder="e.g., 'Our product will guarantee you double your profits!'"></textarea>
+                        <button onclick="runAction()"
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Analyze
+                            Compliance</button>
                     </div>
                     <div id="content-verify" class="sandbox-content hidden">
-                        <p class="text-gray-400 mb-4">Paste a cryptographic receipt generated by the PII Redactor to verify its authenticity.</p>
-                        <textarea id="input-verify" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Paste a receipt here..."></textarea>
-                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Verify Receipt</button>
+                        <p class="text-gray-400 mb-4">Paste a cryptographic receipt generated by the PII Redactor to
+                            verify its authenticity.</p>
+                        <textarea id="input-verify"
+                            class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            placeholder="Paste a receipt here..."></textarea>
+                        <button onclick="runAction()"
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Verify
+                            Receipt</button>
                     </div>
                     <div id="content-cdtdna" class="sandbox-content hidden">
-                        <p class="text-gray-400 mb-4">Experience our Cryptographic Consent DNA Token technology. Enter text to see how CDT works.</p>
-                        <textarea id="input-cdtdna" class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Enter text to generate CDT DNA..."></textarea>
-                        <button onclick="runAction()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Generate CDT DNA</button>
+                        <p class="text-gray-400 mb-4">Experience our Cryptographic Consent DNA Token technology. Enter
+                            text to see how CDT works.</p>
+                        <textarea id="input-cdtdna"
+                            class="w-full h-40 bg-gray-900 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            placeholder="Enter text to generate CDT DNA..."></textarea>
+                        <button onclick="runAction()"
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">Generate
+                            CDT DNA</button>
                     </div>
 
                     <!-- Output Area -->
                     <div id="sandbox-output-container" class="mt-6 hidden">
                         <h4 class="text-xl font-semibold text-white mb-3">Result</h4>
                         <div id="sandbox-loader" class="loader my-4" style="display: none;"></div>
-                        <div id="sandbox-output" class="bg-gray-900 rounded-lg p-4 border border-gray-600 whitespace-pre-wrap text-gray-300"></div>
+                        <div id="sandbox-output"
+                            class="bg-gray-900 rounded-lg p-4 border border-gray-600 whitespace-pre-wrap text-gray-300">
+                        </div>
                         <div id="receipt-output" class="mt-4 hidden">
                             <h5 class="text-lg font-semibold text-indigo-300 mb-2">Cryptographic Receipt</h5>
-                            <div id="receipt-content" class="bg-gray-900 rounded-lg p-4 border border-gray-600 text-sm text-gray-400 font-mono break-all"></div>
+                            <div id="receipt-content"
+                                class="bg-gray-900 rounded-lg p-4 border border-gray-600 text-sm text-gray-400 font-mono break-all">
+                            </div>
                         </div>
                         <!-- Call to Action Button -->
                         <div id="cta-button-container" class="mt-6 text-center hidden">
-                            <a href="mailto:Abraham@finalbosstech.com?subject=Demo Request from AI Sandbox" class="bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 glow">
+                            <a href="mailto:Abraham@finalbosstech.com?subject=Demo Request from AI Sandbox"
+                                class="bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 glow">
                                 Request a Full Demo
                             </a>
                         </div>
@@ -168,13 +267,15 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Technology Section (Redesigned) -->
         <section id="technology" class="py-20 md:py-28 bg-gray-900">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h3 class="text-3xl md:text-4xl font-bold text-white neon-text-shadow">Our Patented GaaS Platform</h3>
-                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Our technology is backed by multiple U.S. and international patent applications pending.</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white neon-text-shadow">Our Patented GaaS Platform
+                    </h3>
+                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Our technology is backed by multiple U.S.
+                        and international patent applications pending.</p>
                 </div>
 
                 <div class="space-y-20">
@@ -182,23 +283,45 @@
                     <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
                         <div class="text-center md:text-left">
                             <h4 class="text-2xl font-bold text-white mb-4">Consent Receipts for AI & Media</h4>
-                            <p class="text-gray-400 mb-4">Our system generates **Cryptographic Consent DNA Tokens (CDTs)**—tamper-proof receipts for every AI and media output. This provides a regulator-ready, verifiable audit trail that proves every action was authorized against a specific policy, ensuring compliance and building user trust.</p>
-                            <span class="text-indigo-400 font-semibold">Benefits: Compliance, Trust, Instant Revocability</span>
+                            <p class="text-gray-400 mb-4">Our system generates **Cryptographic Consent DNA Tokens
+                                (CDTs)**—tamper-proof receipts for every AI and media output. This provides a
+                                regulator-ready, verifiable audit trail that proves every action was authorized against
+                                a specific policy, ensuring compliance and building user trust.</p>
+                            <span class="text-indigo-400 font-semibold">Benefits: Compliance, Trust, Instant
+                                Revocability</span>
                         </div>
                         <div class="flex justify-center mt-8 md:mt-0">
-                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4" class="text-green-400"></path></svg>
+                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9 12l2 2 4-4" class="text-green-400"></path>
+                            </svg>
                         </div>
                     </div>
 
                     <!-- Innovation 2: Inline Policy Enforcement -->
                     <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
                         <div class="flex justify-center mb-8 md:mb-0 md:order-2">
-                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15V9m-4.364 3.364L12 15l4.364-2.636M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 9l-6 6M9 9l6 6" class="text-red-500"></path></svg>
+                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M12 15V9m-4.364 3.364L12 15l4.364-2.636M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M15 9l-6 6M9 9l6 6" class="text-red-500"></path>
+                            </svg>
                         </div>
                         <div class="text-center md:text-left md:order-1">
                             <h4 class="text-2xl font-bold text-white mb-4">Inline AI Policy Enforcement</h4>
-                            <p class="text-gray-400 mb-4">Unlike systems that audit after the fact, our governance layer is enforced **at inference time**. Unauthorized AI responses are blocked before they're ever generated, while compliant outputs are allowed and logged with a verifiable receipt. This prevents liability and ensures ethical AI use from the start.</p>
-                            <span class="text-indigo-400 font-semibold">Benefits: Liability Prevention, Real-Time Safety</span>
+                            <p class="text-gray-400 mb-4">Unlike systems that audit after the fact, our governance layer
+                                is enforced **at inference time**. Unauthorized AI responses are blocked before they're
+                                ever generated, while compliant outputs are allowed and logged with a verifiable
+                                receipt. This prevents liability and ensures ethical AI use from the start.</p>
+                            <span class="text-indigo-400 font-semibold">Benefits: Liability Prevention, Real-Time
+                                Safety</span>
                         </div>
                     </div>
 
@@ -206,11 +329,20 @@
                     <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
                         <div class="text-center md:text-left">
                             <h4 class="text-2xl font-bold text-white mb-4">Multi-System Governance Orchestration</h4>
-                            <p class="text-gray-400 mb-4">Our framework harmonizes compliance across your entire tech stack—from databases like **BigQuery and Snowflake** to ML pipelines and APIs. This creates a single, consistent governance fabric across hybrid and multi-cloud environments, ensuring universal compliance and future-proofing your architecture.</p>
-                            <span class="text-indigo-400 font-semibold">Benefits: Consistent Compliance, Future-Proof</span>
+                            <p class="text-gray-400 mb-4">Our framework harmonizes compliance across your entire tech
+                                stack—from databases like **BigQuery and Snowflake** to ML pipelines and APIs. This
+                                creates a single, consistent governance fabric across hybrid and multi-cloud
+                                environments, ensuring universal compliance and future-proofing your architecture.</p>
+                            <span class="text-indigo-400 font-semibold">Benefits: Consistent Compliance,
+                                Future-Proof</span>
                         </div>
                         <div class="flex justify-center mt-8 md:mt-0">
-                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path></svg>
+                            <svg class="w-48 h-48 text-indigo-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z">
+                                </path>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -223,7 +355,10 @@
                 <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 neon-text-shadow">Who We Are</h3>
                 <div class="w-20 h-1 bg-indigo-500 mx-auto mb-8"></div>
                 <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-12">
-                    Final Boss Technology delivers next-generation governance infrastructure for AI, data, and synthetic media. We specialize in deep-tech solutions that ensure AI outputs are compliant, secure, and ethically governed. We operate in <strong class="text-indigo-400">stealth or white-label mode</strong> — our clients choose whether to publicize our work or keep us invisible.
+                    Final Boss Technology delivers next-generation governance infrastructure for AI, data, and synthetic
+                    media. We specialize in deep-tech solutions that ensure AI outputs are compliant, secure, and
+                    ethically governed. We operate in <strong class="text-indigo-400">stealth or white-label
+                        mode</strong> — our clients choose whether to publicize our work or keep us invisible.
                 </p>
 
                 <!-- Team Carousel -->
@@ -231,24 +366,33 @@
                     <div class="grid md:grid-cols-2 gap-8">
                         <!-- Founder -->
                         <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-                            <img src="https://placehold.co/150x150/4f46e5/ffffff?text=AM" alt="Abraham Manzano" class="w-36 h-36 rounded-full mx-auto border-4 border-gray-700">
+                            <img src="https://placehold.co/150x150/4f46e5/ffffff?text=AM" alt="Abraham Manzano"
+                                class="w-36 h-36 rounded-full mx-auto border-4 border-gray-700">
                             <div class="text-center mt-6">
                                 <h4 class="text-2xl font-bold text-white">Abraham Manzano</h4>
                                 <p class="text-indigo-400 font-semibold">Founder & Chief Architect</p>
                                 <p class="text-gray-400 mt-4">
-                                    Abraham is a deep-tech founder specializing in governance, consent, and trust infrastructure for AI and synthetic media. His work, backed by multiple pending patents, focuses on providing inline, cryptographically verifiable controls to ensure AI outputs are secure and ethically governed.
+                                    Abraham is a deep-tech founder specializing in governance, consent, and trust
+                                    infrastructure for AI and synthetic media. His work, backed by multiple pending
+                                    patents, focuses on providing inline, cryptographically verifiable controls to
+                                    ensure AI outputs are secure and ethically governed.
                                 </p>
                             </div>
                         </div>
 
                         <!-- CTO -->
                         <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-                            <img src="https://placehold.co/150x150/ec4899/ffffff?text=AI" alt="Adeel Irshad" class="w-36 h-36 rounded-full mx-auto border-4 border-gray-700">
+                            <img src="./images/adeel.JPG" alt="Adeel Irshad"
+                                class="w-36 h-36 object-cover rounded-full mx-auto border-4 border-gray-700">
+
                             <div class="text-center mt-6">
                                 <h4 class="text-2xl font-bold text-white">Adeel Irshad</h4>
                                 <p class="text-indigo-400 font-semibold">Chief Technology Officer</p>
                                 <p class="text-gray-400 mt-4">
-                                    Adeel is an experienced technology leader with expertise in building large-scale systems used by thousands of users, generating over millions of dollars in revenue. He specializes in complex distributed systems architecture and scalable infrastructure solutions.
+                                    Adeel is an experienced technology leader with expertise in building large-scale
+                                    systems used by thousands of users, generating over millions of dollars in revenue.
+                                    He specializes in complex distributed systems architecture and scalable
+                                    infrastructure solutions.
                                 </p>
                             </div>
                         </div>
@@ -260,17 +404,37 @@
         <!-- Integrations & Compliance Section -->
         <section class="py-20 md:py-28">
             <div class="container mx-auto px-6 text-center">
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 neon-text-shadow">Integrations & Compliance</h3>
-                <p class="mt-4 text-lg text-gray-400 mb-12">Built to work with your existing stack and meet global regulatory standards.</p>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 neon-text-shadow">Integrations & Compliance
+                </h3>
+                <p class="mt-4 text-lg text-gray-400 mb-12">Built to work with your existing stack and meet global
+                    regulatory standards.</p>
                 <div class="max-w-4xl mx-auto">
                     <h4 class="text-xl font-semibold text-white mb-6">Platform Integrations</h4>
                     <div class="flex justify-center items-center gap-8 md:gap-12 flex-wrap">
                         <!-- Databricks SVG Logo -->
-                        <svg class="h-10 text-gray-400" viewBox="0 0 128 128" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 64L19.2 51.2L64 76.8L108.8 51.2L128 64L64 102.4L0 64ZM64 0L0 38.4L19.2 51.2L64 25.6L108.8 51.2L128 38.4L64 0ZM19.2 76.8L0 89.6L64 128L128 89.6L108.8 76.8L64 102.4L19.2 76.8Z"/></svg>
+                        <svg class="h-10 text-gray-400" viewBox="0 0 128 128" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 64L19.2 51.2L64 76.8L108.8 51.2L128 64L64 102.4L0 64ZM64 0L0 38.4L19.2 51.2L64 25.6L108.8 51.2L128 38.4L64 0ZM19.2 76.8L0 89.6L64 128L128 89.6L108.8 76.8L64 102.4L19.2 76.8Z" />
+                        </svg>
                         <!-- Snowflake SVG Logo -->
-                        <svg class="h-10 text-gray-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21.53 13.2L19.2 12l2.33-1.2-1.2-2.07-2.33 1.2L16.8 7.6l-2.07-1.2-1.2 2.33L12 9.93l-1.53-2.6-2.07 1.2 1.2 2.33L7.2 10.73l-2.33-1.2-1.2 2.07 2.33 1.2L3.6 13.2l1.2 2.07 2.33-1.2 1.2 2.33 2.07 1.2 1.53-2.6 1.53 2.6 2.07-1.2-1.2-2.33 2.33 1.2 1.2-2.07zM12 15.5l-2-3.46 2-3.47 2 3.47-2 3.46z"/></svg>
+                        <svg class="h-10 text-gray-400" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21.53 13.2L19.2 12l2.33-1.2-1.2-2.07-2.33 1.2L16.8 7.6l-2.07-1.2-1.2 2.33L12 9.93l-1.53-2.6-2.07 1.2 1.2 2.33L7.2 10.73l-2.33-1.2-1.2 2.07 2.33 1.2L3.6 13.2l1.2 2.07 2.33-1.2 1.2 2.33 2.07 1.2 1.53-2.6 1.53 2.6 2.07-1.2-1.2-2.33 2.33 1.2 1.2-2.07zM12 15.5l-2-3.46 2-3.47 2 3.47-2 3.46z" />
+                        </svg>
                         <!-- Google Cloud SVG Logo -->
-                        <svg class="h-10 text-gray-400" viewBox="0 0 128 128" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M97.9,56.6C97.9,53,97.6,49.5,97,46.1H64v18h19c-0.8,5.8-3.4,10.9-7.8,14.2v11.7h15.2C104.4,81.8,107.9,70,107.9,56.6z"/><path d="M64,108c12.4,0,22.8-4.1,30.4-11.1L79.2,85.2c-4.1,2.8-9.4,4.4-15.2,4.4c-11.7,0-21.6-7.9-25.1-18.5H23.3v11.7 C30.9,96.8,46.4,108,64,108z"/><path d="M38.9,71.1c-0.8-2.3-1.3-4.8-1.3-7.2s0.5-4.9,1.3-7.2V45H23.3c-2.7,5.4-4.3,11.4-4.3,17.9c0,6.5,1.6,12.5,4.3,17.9 L38.9,71.1z"/><path d="M64,36c6.7,0,12.8,2.3,17.6,6.9l15.2-15.2C88.8,16.1,77.2,12,64,12C46.4,12,30.9,23.2,23.3,35.3l15.6,11.7 C42.4,43.9,52.3,36,64,36z"/></svg>
+                        <svg class="h-10 text-gray-400" viewBox="0 0 128 128" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M97.9,56.6C97.9,53,97.6,49.5,97,46.1H64v18h19c-0.8,5.8-3.4,10.9-7.8,14.2v11.7h15.2C104.4,81.8,107.9,70,107.9,56.6z" />
+                            <path
+                                d="M64,108c12.4,0,22.8-4.1,30.4-11.1L79.2,85.2c-4.1,2.8-9.4,4.4-15.2,4.4c-11.7,0-21.6-7.9-25.1-18.5H23.3v11.7 C30.9,96.8,46.4,108,64,108z" />
+                            <path
+                                d="M38.9,71.1c-0.8-2.3-1.3-4.8-1.3-7.2s0.5-4.9,1.3-7.2V45H23.3c-2.7,5.4-4.3,11.4-4.3,17.9c0,6.5,1.6,12.5,4.3,17.9 L38.9,71.1z" />
+                            <path
+                                d="M64,36c6.7,0,12.8,2.3,17.6,6.9l15.2-15.2C88.8,16.1,77.2,12,64,12C46.4,12,30.9,23.2,23.3,35.3l15.6,11.7 C42.4,43.9,52.3,36,64,36z" />
+                        </svg>
                     </div>
                     <h4 class="text-xl font-semibold text-white mt-12 mb-6">Compliance Frameworks</h4>
                     <div class="flex justify-center items-center gap-8 md:gap-12 flex-wrap text-gray-400 font-semibold">
@@ -287,7 +451,8 @@
         <section id="licensing" class="py-20 md:py-28">
             <div class="container mx-auto px-6 text-center">
                 <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 neon-text-shadow">Licensing Opportunities</h3>
-                <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-12">Flexible licensing for enterprises, platforms, and integrators.</p>
+                <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-12">Flexible licensing for enterprises, platforms,
+                    and integrators.</p>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
                         <h4 class="text-xl font-bold text-white">White-Label</h4>
@@ -306,11 +471,12 @@
                         <p class="mt-2 text-gray-400">Inline enforcement and receipts as a service.</p>
                     </div>
                 </div>
-                 <div class="mt-12">
-                     <a href="mailto:Abraham@finalbosstech.com?subject=Licensing Inquiry" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 rounded-lg transition-transform transform hover:scale-105 glow text-lg">
+                <div class="mt-12">
+                    <a href="mailto:Abraham@finalbosstech.com?subject=Licensing Inquiry"
+                        class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 rounded-lg transition-transform transform hover:scale-105 glow text-lg">
                         Contact Licensing
                     </a>
-                 </div>
+                </div>
             </div>
         </section>
     </main>
@@ -324,8 +490,9 @@
                     <p class="mt-2 text-gray-500">Next-Generation Governance Infrastructure.</p>
                 </div>
                 <div class="text-sm">
-                     <p class="text-gray-400 mb-2">General & Licensing Inquiries:</p>
-                     <a href="mailto:Abraham@finalbosstech.com" class="hover:text-indigo-400">Abraham@finalbosstech.com</a>
+                    <p class="text-gray-400 mb-2">General & Licensing Inquiries:</p>
+                    <a href="mailto:Abraham@finalbosstech.com"
+                        class="hover:text-indigo-400">Abraham@finalbosstech.com</a>
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-800 pt-8">
@@ -335,7 +502,9 @@
                     <a href="privacy.html" class="hover:text-indigo-400">Privacy Policy</a>
                 </div>
                 <p class="text-sm text-gray-500 text-center">
-                    <strong>Disclaimer:</strong> Final Boss Technology provides this overview for illustrative purposes only. Nothing herein limits or defines the scope of our pending patent applications. All features described are examples and subject to change.
+                    <strong>Disclaimer:</strong> Final Boss Technology provides this overview for illustrative purposes
+                    only. Nothing herein limits or defines the scope of our pending patent applications. All features
+                    described are examples and subject to change.
                 </p>
                 <p class="text-sm text-gray-500 text-center mt-4">
                     &copy; <span id="current-year"></span> Final Boss Technology. All rights reserved.
@@ -399,7 +568,7 @@
             ctaContainer.classList.add('hidden');
             loader.style.display = 'block';
             outputElement.textContent = '';
-            
+
             let prompt = '';
             if (currentTab === 'verify') {
                 loader.style.display = 'none';
@@ -499,8 +668,8 @@
                 const result = await response.json();
                 // Extract text from Gemini API response format
                 const text = result.candidates?.[0]?.content?.parts?.[0]?.text ||
-                            result.text ||
-                            JSON.stringify(result, null, 2);
+                    result.text ||
+                    JSON.stringify(result, null, 2);
                 outputElement.textContent = text;
                 ctaContainer.classList.remove('hidden');
 
@@ -526,7 +695,7 @@
         });
 
         // Add Enter key handler for CDT DNA textarea
-        document.getElementById('input-cdtdna').addEventListener('keypress', function(e) {
+        document.getElementById('input-cdtdna').addEventListener('keypress', function (e) {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
                 runAction();
@@ -535,4 +704,5 @@
     </script>
 
 </body>
+
 </html>
